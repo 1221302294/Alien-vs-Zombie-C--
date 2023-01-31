@@ -13,7 +13,7 @@
 
 
     void ClearScreen(); // (from tutorial)
-    void Pause(); // (from tutorial)
+    void Pausee(){};// (from tutorial)
     void displayMenu(); // cc (from tutorial)
     void controls(); // cc (from tutorial)
     void gameover(); // tingli
