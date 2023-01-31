@@ -11,14 +11,15 @@
 #include <cstdlib>
 #include <conio.h>
 #include "mainheader.h"
+using namespace std;
 
     
     void ClearScreen()
     {
         #if defined(_WIN32)
-            return std::system("cls");
+            system("cls");
         #elif defined(__linux__) || defined(__APPLE__)
-            return std::system("clear");
+            system("clear");
         #endif
     }
 
@@ -60,7 +61,7 @@
     {
         ClearScreen();
 		std::cout << "\n\n\t\t\tGAME OVER.";
-		Pause();
+		Pausee();
     }
 
     void controls() {
@@ -83,7 +84,7 @@
 		std::cout <<  "| load  //Load a saved game from a file.      |" << std::endl; 
 		std::cout <<  "| quit  //Quit the game while still in play.  |" << std::endl; 
 		std::cout << std::endl;
-		Pause();
+		Pausee();
 	}
    
     void help()
@@ -101,7 +102,7 @@
         std::cout << "8. quit    - Quit the game." << std::endl;
         std::cout << "Press any key to continue..." << std::endl;
 		std::cout << std::endl;
-		Pause();
+		Pausee();
 	}
     
     void settings()
@@ -124,17 +125,17 @@
 			switch(input) 
 			{
 				case 'y':
-					play();
+					settings();
 					break;
 				case 'n':
-					defplay();
+					gameBoard();
 					break;
 				case 'b':
 					displayMenu();
 					break;
 				default:
 					std::cout << "Invalid! Try again" << std::endl;
-					Pause();
+					Pausee();
 					break;
 			}
 		} while (1);
