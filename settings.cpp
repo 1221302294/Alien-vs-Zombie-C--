@@ -10,8 +10,8 @@
 
 #include <iostream>
 #include "mainheader.h"
-#include "helper.h"
-#include "helper.cpp"
+#include "pf/helper.h"
+#include "pf/helper.cpp"
 
 using namespace std;
 
@@ -106,7 +106,7 @@ void quitGame();
 int main(){
     cout << "Assignment (Part 1)" << endl;
     cout << "Let's Get Started!" << endl;
-    pf::Pause();
+    Pausee();
     settings();
 }
 
