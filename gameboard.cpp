@@ -16,7 +16,7 @@
 #include <ctime> 
 using namespace std;
 
-gameBoard::gameBoard(int dimX, int dimY, int zomb)
+    gameBoard::gameBoard(int dimX, int dimY, int zomb)
 {
     init(dimX, dimY, zomb);
 }
@@ -206,3 +206,4 @@ int main()
 
     program();
 }
+
