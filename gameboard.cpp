@@ -14,6 +14,7 @@
 #include <iomanip>
 #include <cstdlib> 
 #include <ctime> 
+#include "menu.cpp"
 using namespace std;
 
     gameBoard::gameBoard(int dimX, int dimY, int zomb)
@@ -157,7 +158,7 @@ char gameBoard::getObject(int x, int y) const
     return map_[dimY_-y][x-1];
 }
 
-void changesetting()
+void setting2()
 {
     gameBoard board;
     int x, y, z;  
@@ -206,4 +207,3 @@ int main()
 
     program();
 }
-
