@@ -11,6 +11,7 @@
 #include <cstdlib>
 #include <conio.h>
 #include "mainheader.h"
+#include "settings.cpp"
 using namespace std;
 
     
@@ -23,6 +24,9 @@ using namespace std;
         #endif
     }
 
+    void Pausee(){
+    std::cin.get();
+}
     void displayMenu()
     {
        do {
@@ -41,7 +45,7 @@ using namespace std;
 			switch(enter) 
             {
 				case '1':
-					settings();
+					cout << "hahaa" << endl;
 					break;
 				case '2':
 					controls();
@@ -105,7 +109,7 @@ using namespace std;
 		Pausee();
 	}
     
-    void settings()
+    void setting()
     {
         gameBoard board;
 		do 
@@ -118,25 +122,21 @@ using namespace std;
 			std::cout << " Zombie Count   : " << board.getZomB() << std::endl; 
 			std::cout << std::endl;
 			std::cout << " Do you wish to change the game settings (y/n)? =>" << std::endl;
-			std::cout << "<== Go back to menu (b)" << std::endl;
-			char input;
-			std::cin>> input;
+			char input = 'y';
+			std::cin >> input;
 
-			switch(input) 
-			{
-				case 'y':
-					settings();
-					break;
-				case 'n':
-					gameBoard();
-					break;
-				case 'b':
-					displayMenu();
-					break;
-				default:
-					std::cout << "Invalid! Try again" << std::endl;
-					Pausee();
-					break;
+			if(input=='y'){
+			std::cout << " Board Rows     : " << board.getDimY() << std::endl; 
+			std::cout << " Board Columns  : " << board.getDimX() << std::endl; 
+			std::cout << " Zombie Count   : " << board.getZomB() << std::endl; 
+			}
+
+			else if (input !='y'){
+			std::cout << "Default Settings Applied" << std::endl;
+			}
+
+			else{
+			break;
 			}
 		} while (1);
 	}
