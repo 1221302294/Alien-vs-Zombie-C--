@@ -7,27 +7,14 @@
 // Emails: 1221302637@student.mmu.edu.my | 1221302294@student.mmu.edu.my      //
 // Phones: 010-2675333                   | 017-9325346                     //
 // ************************************************************************** //
-#include <iostream> 
+#include <iostream>
 #include <cstdlib>
 #include <conio.h>
 #include "mainheader.h"
 #include "settings.cpp"
 using namespace std;
 
-    
-    void ClearScreen()
-    {
-        #if defined(_WIN32)
-            system("cls");
-        #elif defined(__linux__) || defined(__APPLE__)
-            system("clear");
-        #endif
-    }
-
-    void Pausee(){
-    std::cin.get();
-}
-    void displayMenu()
+	void displayMenu()
     {
        do {
 			ClearScreen();
@@ -35,6 +22,7 @@ using namespace std;
 			std::cout <<  " |    .:Alien VS Zombie:.   |" << std::endl;
 			std::cout <<  " -------------------------- " << std::endl;
 			std::cout <<  " 1.	PLAY      	           " << std::endl;
+			std::cout <<  " 2.	CONTINUE      	       " << std::endl;
 			std::cout <<  " 2.	HELP        	       " << std::endl;
 			std::cout <<  " 3.	QUIT			       " << std::endl;
 			std::cout << std::endl;
@@ -45,12 +33,15 @@ using namespace std;
 			switch(enter) 
             {
 				case '1':
-					cout << "hahaa" << endl;
+					playmenu();
 					break;
 				case '2':
-					controls();
+					//add load game function
 					break;
 				case '3':
+					controls();
+					break;
+				case '4':
 					exit(0);
 					break;
 				default:
@@ -65,7 +56,7 @@ using namespace std;
     {
         ClearScreen();
 		std::cout << "\n\n\t\t\tGAME OVER.";
-		Pausee();
+		Pause();
     }
 
     void controls() {
@@ -88,11 +79,12 @@ using namespace std;
 		std::cout <<  "| load  //Load a saved game from a file.      |" << std::endl; 
 		std::cout <<  "| quit  //Quit the game while still in play.  |" << std::endl; 
 		std::cout << std::endl;
-		Pausee();
+		Pause();
 	}
    
     void help()
     {
+		ClearScreen();
         std::cout << std::endl;
 		std::cout <<  " COMMAND " << std::endl;
 		std::cout << std::endl;         
@@ -106,37 +98,39 @@ using namespace std;
         std::cout << "8. quit    - Quit the game." << std::endl;
         std::cout << "Press any key to continue..." << std::endl;
 		std::cout << std::endl;
-		Pausee();
 	}
     
-    void setting()
+    void playmenu()
     {
-        gameBoard board;
+        ClearScreen();
 		do 
 		{
 			ClearScreen();
 			std::cout << " Default Game Settings " << std::endl;
 			std::cout << "-----------------------" << std::endl;
-			std::cout << " Board Rows     : " << board.getDimY() << std::endl; 
-			std::cout << " Board Columns  : " << board.getDimX() << std::endl; 
-			std::cout << " Zombie Count   : " << board.getZomB() << std::endl; 
+			std::cout << " Board Rows     : " << getDimY() << std::endl; 
+			std::cout << " Board Columns  : " << getDimX() << std::endl; 
+			std::cout << " Zombie Count   : " << getZomB() << std::endl; 
 			std::cout << std::endl;
 			std::cout << " Do you wish to change the game settings (y/n)? =>" << std::endl;
-			char input = 'y';
+			char input;
 			std::cin >> input;
 
-			if(input=='y'){
-			std::cout << " Board Rows     : " << board.getDimY() << std::endl; 
-			std::cout << " Board Columns  : " << board.getDimX() << std::endl; 
-			std::cout << " Zombie Count   : " << board.getZomB() << std::endl; 
-			}
-
-			else if (input !='y'){
-			std::cout << "Default Settings Applied" << std::endl;
-			}
-
-			else{
-			break;
+			switch(input) 
+			{
+				case 'n':
+					Board();
+					break;
+				case 'y':
+					changesetting();
+					break;
+				case 'b':
+					displayMenu();
+					break;
+				default:
+					cout << "Invalid! Try again" << endl;
+					Pause();
+					break;
 			}
 		} while (1);
 	}
