@@ -39,8 +39,8 @@ using namespace std;
     char refreshObj(char x);
     void ranobjupdate();
     void rockobjupdate(int y, int x);
-    void changesetting(); // liEn
-    void Board(); // liEn
+    void changesetting();
+    void Board();
     void zomdisplay(int no);
     void play();
 
