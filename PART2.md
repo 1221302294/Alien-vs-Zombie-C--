@@ -26,10 +26,6 @@ List all the features completed.
 
 ## Contributions
 
-List down the contribution of each group members.
-
-For example:
-
 ### CHOO CHEE CHOONG
 
 1. Randomly generate gameboard.
