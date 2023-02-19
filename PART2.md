@@ -19,9 +19,8 @@ List all the features completed.
 7. Alien movement
 8. Arrow direction control command
 9. Load function
-10.Save function
-11.Quit option
-
+10. Save function
+11. Quit option
 ## Additional Features
 1. The harm done to the alien will restore the zombie's health due to the zombie's life-stealing ability.
 
