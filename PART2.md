@@ -44,7 +44,7 @@ List all the features completed.
 5. Quit function
 6. Alien movement
 7. Game objection interaction
-
+8. 8. Game testing and bugs fixing
 
 ## Problems Encountered & Solutions
 
