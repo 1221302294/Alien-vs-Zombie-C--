@@ -162,7 +162,7 @@ vector<vector<char>> setmap(int y, int x, char obj)
     return map_;
 }
 // set the number of zombies
-int setZomB(int z) // liEn 
+int setZomB(int z)
 {
     zomB_ = z;
     return zomB_;
