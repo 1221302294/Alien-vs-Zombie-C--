@@ -1,8 +1,7 @@
 # Part 2
 
 ## Video Demo
-
-Please provide the YouTube link to your [Video Demo](https://youtube.com).
+https://youtu.be/6yqmyQPuytE
 
 ## Minimum Requirements
 
@@ -21,6 +20,7 @@ List all the features completed.
 9. Load function
 10. Save function
 11. Quit option
+
 ## Additional Features
 1. The harm done to the alien will restore the zombie's health due to the zombie's life-stealing ability.
 
